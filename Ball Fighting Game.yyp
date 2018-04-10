@@ -127,6 +127,14 @@
             }
         },
         {
+            "Key": "526b77f5-69e0-46cc-931c-536e05efc96a",
+            "Value": {
+                "id": "be036e01-dd7a-4827-bc81-af853fc0ef3a",
+                "resourcePath": "scripts\\DamageAroundOrb\\DamageAroundOrb.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5288a0e1-2f17-482b-b75c-2267aa8cef85",
             "Value": {
                 "id": "5e8b2413-6ea1-47f2-9f3d-151f202527eb",
@@ -255,6 +263,14 @@
             }
         },
         {
+            "Key": "8eca0a35-c3da-433e-a178-cce9d7c4c081",
+            "Value": {
+                "id": "44a77f9d-2c7b-4bee-a018-0af1511ea909",
+                "resourcePath": "sprites\\spr_damage_field\\spr_damage_field.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "93b629c9-9224-428d-b511-b799461b878a",
             "Value": {
                 "id": "aca6e282-7274-47c2-aa58-8f4bb6f736cc",
@@ -267,14 +283,6 @@
             "Value": {
                 "id": "5c1bdc7a-6c7d-4d36-b8fb-86d6ba452f67",
                 "resourcePath": "sprites\\spr_orb\\spr_orb.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "9a914b99-9584-4469-98d4-dcc3a8ce3349",
-            "Value": {
-                "id": "51d549b1-a0ee-40ce-bf24-136e2f998190",
-                "resourcePath": "sprites\\spr_enemy\\spr_enemy.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -375,6 +383,14 @@
             }
         },
         {
+            "Key": "c8221e24-cc79-4999-8b26-be1e7e9ad8b3",
+            "Value": {
+                "id": "a2e7e2a4-029a-45a8-9b59-52ac6dd906c1",
+                "resourcePath": "objects\\obj_damage_field\\obj_damage_field.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "c9551329-59b2-4e87-8f92-f0300e9b03c8",
             "Value": {
                 "id": "622b3e5a-cbf3-4c04-ab1c-5e70a3072eff",
@@ -388,6 +404,14 @@
                 "id": "4d81b75f-c0b6-493b-8eec-9af6ee61d0b8",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "db08776b-f0b0-49f8-a189-c32975324308",
+            "Value": {
+                "id": "019665c3-a40a-4d3f-ab60-0bc8634ae467",
+                "resourcePath": "scripts\\TeleportOrb\\TeleportOrb.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -446,6 +470,8 @@
         "83af2a2a-118e-4cfb-a795-d3687b597340",
         "9b8f3ad1-1456-430a-a347-b271a6ba22a8",
         "a549a8ce-dce0-48c3-94fb-c3f6158b8b51",
+        "db08776b-f0b0-49f8-a189-c32975324308",
+        "526b77f5-69e0-46cc-931c-536e05efc96a",
         "0fda102b-398e-4a60-88ac-e0a713cbe84a"
     ],
     "tutorial": ""

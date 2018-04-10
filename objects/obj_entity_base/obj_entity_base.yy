@@ -317,6 +317,20 @@
             "value": "1",
             "varName": "health_pct",
             "varType": 0
+        },
+        {
+            "id": "3f984306-9ef0-44d8-aad2-ea2bf3531ddc",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "color_index",
+            "varType": 1
         }
     ],
     "solid": false,

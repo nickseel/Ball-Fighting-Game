@@ -6,6 +6,6 @@ if(other.controller != noone && other.controller != self) {
 	show_debug_message("damage 10%");
 	health_pct -= 0.1;
 	if(health_pct <= 0) {
-		instance_destroy();
+		event_user(0); //Kill
 	}
 }

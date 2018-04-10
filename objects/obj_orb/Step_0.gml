@@ -105,4 +105,38 @@ switch(orb_movement_state) {
 	}
 	break;
 	#endregion
+	#region Teleporting
+	case OrbMovementState.TELEPORTING:
+	{
+		/*  0: teleport timer
+			1: teleport timer max
+			2: teleported
+			3: target x
+			4: target y	    */
+		
+		is_visible = false;
+		movement_data[0] += delta;
+		
+		if(movement_data[0] >= movement_data[1]) {
+			orb_movement_state = OrbMovementState.FREE;
+			is_visible = true;
+			
+			with(instance_create_layer(x, y, "Instances", obj_damage_field)) {
+				stick_to_object = other;
+				controller = other.controller;
+				life_time = 0.1;
+				spawn_time = 0.0;
+				size = 2.0;
+				damage = 0.25;
+			}
+		} else if(movement_data[0] >= movement_data[1] / 2 && movement_data[2] == 0) {
+			x = movement_data[3];
+			y = movement_data[4];
+			movement_data[2] = 1;
+		}
+		
+		event_inherited();
+	}
+	break;
+	#endregion
 }

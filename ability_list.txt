@@ -1,0 +1,31 @@
+ORB MANIPULATION
+- launch orb (target direction)
+- launch orb (specific location)
+- launch orb (curved/other paths)
+- charge and launch orb (debuff while charging)
+- teleport orb (delay and damage)
+- return orb (damage)
+- launch orb from far away player
+- slingshot orb through player
+- lose health, spawn orb
+- spawn orbs eventually over time
+- (?) create barrier
+
+ORB ATTACKS
+- explosion at orb (knockback or stun)
+- spin orbs nearby player (melee damage)
+- laser between orbs (not orbiting player)
+- charge large laser, scales with all the players orbiting orbs
+- accurate, delayed, targeted strike for big dmg
+
+MOVEMENT
+- dash
+- dash backwards
+- (?) dash towards orb
+- teleport/swap with orb
+- phase out for set amount of time, un-hittable temporarily
+
+PROJECTILES
+- shoot bullet
+- shoot laser
+- 

@@ -1,4 +1,4 @@
-/// @desc ?
+/// @desc Initialize ability variables and timers
 num_abilities = array_length_1d(current_abilities);
 ability_inputs = array_create(num_abilities, 0);
 prev_ability_inputs = array_create(num_abilities, 0);

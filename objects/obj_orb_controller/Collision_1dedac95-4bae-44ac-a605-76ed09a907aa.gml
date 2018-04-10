@@ -11,7 +11,7 @@ if(other.orb_movement_state == OrbMovementState.LAUNCHING) {
 			health_pct -= 0.25;
 			show_debug_message("health " + string(health_pct));
 			if(health_pct <= 0) {
-				instance_destroy();
+				event_user(0); //Kill
 			}
 			
 			var angle = arctan2(other.y - y, other.x - x);
