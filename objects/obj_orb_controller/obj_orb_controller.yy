@@ -183,6 +183,20 @@
             "varType": 0
         },
         {
+            "id": "2c59acf6-99ed-4aac-8044-945c1210b409",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "40",
+            "varName": "orb_rotation_distance_max",
+            "varType": 0
+        },
+        {
             "id": "508eace9-8454-4f0b-9f62-c789a913d704",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -208,6 +222,48 @@
             "resourceFilter": 1023,
             "value": "0.8",
             "varName": "orb_rotation_distance_aspect_ratio",
+            "varType": 0
+        },
+        {
+            "id": "fd5f3e79-2383-41f2-8464-9ad275ae035f",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "saw_timer",
+            "varType": 0
+        },
+        {
+            "id": "3deff516-3338-458c-89cf-b5ebbbe6ab1e",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "max_speed",
+            "varName": "max_max_speed",
+            "varType": 4
+        },
+        {
+            "id": "8400bffd-fcbe-49cb-8d14-7a1af826dfe4",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "1",
+            "varName": "movement_speed_multiplier",
             "varType": 0
         },
         {
@@ -248,7 +304,7 @@
             "rangeMax": 10,
             "rangeMin": 0,
             "resourceFilter": 1023,
-            "value": "0.2",
+            "value": "0.1",
             "varName": "time_between_same_collision",
             "varType": 0
         },
@@ -321,20 +377,6 @@
             "value": "0",
             "varName": "num_abilities",
             "varType": 1
-        },
-        {
-            "id": "2c59acf6-99ed-4aac-8044-945c1210b409",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0",
-            "varName": "variable_name",
-            "varType": 0
         }
     ],
     "solid": false,

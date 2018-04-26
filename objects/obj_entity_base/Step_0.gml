@@ -4,6 +4,10 @@ switch(movement_state) {
 	#region Free movement
 	case MovementState.FREE:
 	{
+		//Calculate movement direction and magnitude
+		var prev_angle = arctan2(y_vel, x_vel);
+		var prev_total_vel = sqrt(sqr(x_vel) + sqr(y_vel));
+		
 		//Don't move into a wall, allows for friction
 		if(input_move_x != 0 && sign(input_move_x) == collide_horizontal) input_move_x = 0;
 		if(input_move_y != 0 && sign(input_move_y) == collide_vertical) input_move_y = 0;
@@ -14,20 +18,23 @@ switch(movement_state) {
 		var x_accel = frame_accel * input_move_x / n;
 		var y_accel = frame_accel * input_move_y / n;
 		
-		//Calculate movement direction and magnitude
-		var prev_angle = arctan2(y_vel, x_vel);
-		var prev_total_vel = sqrt(sqr(x_vel) + sqr(y_vel));
+		/*if(prev_total_vel > max_speed) {
+			if(sign(x_accel) * sign(x_vel) == 1) x_accel = 0;
+			if(sign(y_accel) * sign(y_vel) == 1) y_accel = 0;
+		}*/
 		
 		//Deccelerate if not moving
 		if(has_friction) {
-			if(input_move_x == 0 && input_move_y == 0 && prev_total_vel != 0) {
+			if(prev_total_vel > max_speed) {
+				//Slow down if above max_speed
+				x_accel *= power(max_speed / prev_total_vel, 2);
+				y_accel *= power(max_speed / prev_total_vel, 2);
+				x_accel += -cos(prev_angle) * min(abs(x_vel), frame_accel / 1);
+				y_accel += -sin(prev_angle) * min(abs(y_vel), frame_accel / 1);
+			} else if(input_move_x == 0 && input_move_y == 0 && prev_total_vel != 0) {
 				//Slow down based on slide if not moving
 				x_accel += -cos(prev_angle) * min(abs(x_vel), frame_accel / slide);
 				y_accel += -sin(prev_angle) * min(abs(y_vel), frame_accel / slide);
-			} else if(prev_total_vel > max_speed) {
-				//Slow down if above max_speed
-				x_accel += -cos(prev_angle) * min(abs(x_vel), frame_accel * 1);
-				y_accel += -sin(prev_angle) * min(abs(y_vel), frame_accel * 1);
 			}
 		}
 		
@@ -35,6 +42,7 @@ switch(movement_state) {
 		x_vel += x_accel;
 		y_vel += y_accel;
 		
+		/*
 		//Calculate new movement direction and magnitude
 		var post_angle = arctan2(y_vel, x_vel);
 		var post_total_vel = sqrt(sqr(x_vel) + sqr(y_vel));
@@ -49,7 +57,7 @@ switch(movement_state) {
 			var factor = (max(prev_total_vel, max_speed) * cos(angle_diff * 4)) / post_total_vel;
 			x_vel *= factor;
 			y_vel *= factor;
-		}
+		}*/
 	}
 	break;
 	#endregion

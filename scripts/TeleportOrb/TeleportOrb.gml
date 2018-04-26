@@ -11,6 +11,9 @@ with(argument0) {
 				with(orb) {
 					orb_movement_state = OrbMovementState.TELEPORTING;
 					
+					orb.x_vel = 0;
+					orb.y_vel = 0;
+					
 					//orbiting_angle = ((orbiting_angle + pi) mod (2*pi)) - pi;
 					//var angle = arctan2(mouse_y - y, mouse_x - x);
 					//orbiting_angle = (orbiting_angle + angle) / 2;
