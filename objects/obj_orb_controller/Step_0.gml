@@ -141,22 +141,6 @@ for(var i = 0; i < num_abilities; i++) {
 }
 #endregion
 
-#region Tick collision timers
-for(var i = ds_list_size(objects_collided_with)-1; i >= 0; i--) {
-	var new_time = ds_list_find_value(same_collision_timers, i) - delta;
-	
-	//Check if timer is finished
-	if(new_time <= 0) {
-		//Delete item off collision blacklist
-		ds_list_delete(same_collision_timers, i);
-		ds_list_delete(objects_collided_with, i);
-	} else {
-		//Replace with lower timer
-		ds_list_set(same_collision_timers, i, new_time);
-	}
-}
-#endregion
-
 //Rotate orbs
 orb_rotation_speed = (orb_rotation_speed_max / ((num_orbs_orbiting * 0.8) + 2.5)) * (saw_timer * 5 + 1);
 orb_rotation_angle += orb_rotation_speed * delta;

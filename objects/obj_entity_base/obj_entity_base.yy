@@ -165,6 +165,20 @@
             "varType": 3
         },
         {
+            "id": "e1e6dc60-0e58-46a2-ab77-a0face6cd618",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "False",
+            "varName": "move_through_walls",
+            "varType": 3
+        },
+        {
             "id": "f13d8c6c-2792-4862-b34f-4bb01cdaab98",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
@@ -287,7 +301,7 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "0",
-            "varName": "collide_vertical",
+            "varName": "collide_terrain_vertical",
             "varType": 1
         },
         {
@@ -301,7 +315,7 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "0",
-            "varName": "collide_horizontal",
+            "varName": "collide_terrain_horizontal",
             "varType": 1
         },
         {
@@ -331,6 +345,34 @@
             "value": "0",
             "varName": "color_index",
             "varType": 1
+        },
+        {
+            "id": "52e92f44-f7ea-48b1-b2d4-1b2d5bd54686",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "noone",
+            "varName": "hitbox",
+            "varType": 4
+        },
+        {
+            "id": "e7095dbc-a40a-4e36-bed9-22e7e04db0cf",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "HitboxControllerType.CONTROLLER",
+            "varName": "hitbox_controller_type",
+            "varType": 4
         }
     ],
     "solid": false,

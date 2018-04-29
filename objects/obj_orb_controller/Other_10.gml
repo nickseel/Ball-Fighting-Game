@@ -1,5 +1,6 @@
 /// @desc Kill orb controller
 
+show_debug_message("kill");
 if(health_pct <= 0) {
 	for(var i = 0; i < num_orbs; i++) {
 		var orb = ds_list_find_value(orbs, 0);

@@ -1,5 +1,5 @@
 /// @desc Collide
-
+/*
 	if(other.controller != noone && other.controller != self) {
 		
 		if(ds_list_find_index(objects_collided_with, other) == -1) {
@@ -14,3 +14,4 @@
 			}
 		}
 	}
+*/

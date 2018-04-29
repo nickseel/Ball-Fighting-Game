@@ -1,5 +1,5 @@
 /// @desc ?
 
-if(other.controller != controller) {
+//if(other.controller != controller) {
 	//collide
-}
+//}

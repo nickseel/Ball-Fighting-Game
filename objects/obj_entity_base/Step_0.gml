@@ -9,8 +9,8 @@ switch(movement_state) {
 		var prev_total_vel = sqrt(sqr(x_vel) + sqr(y_vel));
 		
 		//Don't move into a wall, allows for friction
-		if(input_move_x != 0 && sign(input_move_x) == collide_horizontal) input_move_x = 0;
-		if(input_move_y != 0 && sign(input_move_y) == collide_vertical) input_move_y = 0;
+		if(input_move_x != 0 && sign(input_move_x) == collide_terrain_horizontal) input_move_x = 0;
+		if(input_move_y != 0 && sign(input_move_y) == collide_terrain_vertical) input_move_y = 0;
 		
 		//Calculate directional acceleration
 		var frame_accel = delta * accel;
@@ -88,13 +88,13 @@ dy = y_vel * delta;
 
 #endregion
 
-#region Collision
+#region Terrain collision
 var bbox_side;
 var check;
 
 //Check collision in multiple steps, if going fast
-collide_horizontal = 0;
-collide_vertical = 0;
+collide_terrain_horizontal = 0;
+collide_terrain_vertical = 0;
 var num_steps = ceil(2 * max(abs(dx), abs(dy)) / 32);
 for(var i = 0; i < num_steps; i++) {
 	dx_step = round(dx / num_steps);
@@ -106,10 +106,10 @@ for(var i = 0; i < num_steps; i++) {
 				IsColliding(collision_tilemap, bbox_side + dx_step, bbox_bottom - 0.1, false));
 	if(collide_center) check = min(check, IsColliding(collision_tilemap, bbox_side + dx_step, y, false));
 
-	if(check != 999) {
+	if(check != 999 && !move_through_walls) {
 		x += dx_step + (check * -sign(x_vel));
 		//if(x_vel > 0) x++;
-		collide_horizontal = sign(x_vel);
+		collide_terrain_horizontal = sign(x_vel);
 		
 		dx = 0;
 		dx_step = 0;
@@ -123,10 +123,10 @@ for(var i = 0; i < num_steps; i++) {
 				IsColliding(collision_tilemap, bbox_right - 0.1, bbox_side + dy_step, true));
 	if(collide_center) check = min(check, IsColliding(collision_tilemap, x, bbox_side + dy_step, true));
 
-	if(check != 999) {
+	if(check != 999 && !move_through_walls) {
 		y += dy_step + (check * -sign(y_vel));
 		//if(y_vel < 0) y--;
-		collide_vertical = sign(y_vel);
+		collide_terrain_vertical = sign(y_vel);
 		
 		dy = 0;
 		dy_step = 0;
@@ -135,11 +135,11 @@ for(var i = 0; i < num_steps; i++) {
 }
 
 if(bounce > 0) {
-	if(collide_horizontal != 0) {
+	if(collide_terrain_horizontal != 0) {
 		x_vel *= bounce * -1;
 		y_vel *= bounce;
 	}
-	if(collide_vertical != 0) {
+	if(collide_terrain_vertical != 0) {
 		x_vel *= bounce;
 		y_vel *= bounce * -1;
 	}

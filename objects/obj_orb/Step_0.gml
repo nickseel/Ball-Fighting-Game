@@ -63,7 +63,7 @@ switch(orb_movement_state) {
 		//Movement and collision code
 		event_inherited();
 		
-		if(collide_horizontal != 0 || collide_vertical != 0) {
+		if(collide_terrain_horizontal != 0 || collide_terrain_vertical != 0) {
 			orb_movement_state = OrbMovementState.FREE;
 		}
 	}
@@ -73,9 +73,10 @@ switch(orb_movement_state) {
 	case OrbMovementState.RETURNING:
 	{
 		has_friction = false;
+		move_through_walls = true;
 		//show_debug_message("returning");
 		//Calculate direction and movement variables
-		var angle = arctan2(controller.y - y, controller.x - x) + 0;
+		var angle = arctan2(orb_controller.y - y, orb_controller.x - x) + 0;
 		var acceleration = 15000;
 		var max_vel = 1500;
 		
@@ -89,15 +90,17 @@ switch(orb_movement_state) {
 		y_vel *= min(1, max_vel / vel);
 		
 		//Check if near controller
-		var distance = sqrt(sqr(controller.x - x) + sqr(controller.y - y));
+		var distance = sqrt(sqr(orb_controller.x - x) + sqr(orb_controller.y - y));
 		if(distance < min(max_vel, vel) * (2 / 60)) {
 			//Return to orbit
 			orb_movement_state = OrbMovementState.ORBITING;
-			orb_index = controller.num_orbs_orbiting;
+			orb_index = orb_controller.num_orbs_orbiting;
 			
-			controller.num_orbs++;
-			controller.num_orbs_orbiting++;
-			ds_list_add(controller.orbs, self);
+			orb_controller.num_orbs++;
+			orb_controller.num_orbs_orbiting++;
+			ds_list_add(orb_controller.orbs, self);
+			
+			move_through_walls = false;
 		}
 		
 		//Run movement and collision code
@@ -121,14 +124,14 @@ switch(orb_movement_state) {
 			orb_movement_state = OrbMovementState.FREE;
 			is_visible = true;
 			
-			with(instance_create_layer(x, y, "Instances", obj_damage_field)) {
+			/*with(instance_create_layer(x, y, "Instances", obj_damage_field)) {
 				stick_to_object = other;
 				controller = other.controller;
 				life_time = 0.1;
 				spawn_time = 0.0;
 				size = 2.0;
 				damage = 0.25;
-			}
+			}*/
 		} else if(movement_data[0] >= movement_data[1] / 2 && movement_data[2] == 0) {
 			x = movement_data[3];
 			y = movement_data[4];

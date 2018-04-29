@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "1e789530-8373-41f0-9eea-40b6a3db4269",
+            "Value": {
+                "id": "c1af0d4c-6fe5-4fb2-ab71-2f548e788791",
+                "resourcePath": "sprites\\spr_sqr_hitbox\\spr_sqr_hitbox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "23b9a779-9536-4282-b10b-a1945eead1f1",
             "Value": {
                 "id": "44310e24-7007-4380-9514-ceb9f939a5ac",
@@ -298,7 +306,7 @@
             "Key": "8eca0a35-c3da-433e-a178-cce9d7c4c081",
             "Value": {
                 "id": "44a77f9d-2c7b-4bee-a018-0af1511ea909",
-                "resourcePath": "sprites\\spr_damage_field\\spr_damage_field.yy",
+                "resourcePath": "sprites\\spr_circ_hitbox\\spr_circ_hitbox.yy",
                 "resourceType": "GMSprite"
             }
         },

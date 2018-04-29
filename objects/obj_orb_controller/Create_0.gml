@@ -1,4 +1,6 @@
 /// @desc Initialize ability variables and timers
+
+#region Init ability data
 num_abilities = array_length_1d(current_abilities);
 ability_inputs = array_create(num_abilities, 0);
 prev_ability_inputs = array_create(num_abilities, 0);
@@ -18,7 +20,18 @@ for(var i = 0; i < num_abilities; i++) {
 		break;
 	}
 }
+#endregion
+
+#region Create hitbox
+var width = (sprite_get_bbox_right(spr_player) -
+	sprite_get_bbox_left(spr_player)) / 1;
+var height = (sprite_get_bbox_bottom(spr_player) -
+	sprite_get_bbox_top(spr_player)) / 1;
+hitbox = instance_create_layer(x, y, "Instances", obj_sqr_hitbox);
+hitbox.hitbox_controller = self;
+hitbox.x_size = width*1;
+hitbox.y_size = height*1;
+#endregion
 
 // Inherit the parent event
 event_inherited();
-

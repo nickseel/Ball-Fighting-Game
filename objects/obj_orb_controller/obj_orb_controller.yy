@@ -45,7 +45,17 @@
             "m_owner": "b85514b5-f91c-48a6-8701-a92a2b0d1dfc"
         },
         {
-            "id": "eb3e0433-e45c-4586-8d30-9f0f4a4747c6",
+            "id": "050d4fc4-8e4f-435b-96bd-aaeaefd00c79",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "c8221e24-cc79-4999-8b26-be1e7e9ad8b3",
+            "enumb": 0,
+            "eventtype": 4,
+            "m_owner": "b85514b5-f91c-48a6-8701-a92a2b0d1dfc"
+        },
+        {
+            "id": "d646863a-dec6-4d49-a100-31ff2d9d59ef",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
@@ -55,13 +65,13 @@
             "m_owner": "b85514b5-f91c-48a6-8701-a92a2b0d1dfc"
         },
         {
-            "id": "050d4fc4-8e4f-435b-96bd-aaeaefd00c79",
+            "id": "927dbeb3-6682-47bd-abea-32bf078a2f84",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
-            "collisionObjectId": "c8221e24-cc79-4999-8b26-be1e7e9ad8b3",
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 4,
+            "eventtype": 1,
             "m_owner": "b85514b5-f91c-48a6-8701-a92a2b0d1dfc"
         }
     ],
@@ -264,48 +274,6 @@
             "resourceFilter": 1023,
             "value": "1",
             "varName": "movement_speed_multiplier",
-            "varType": 0
-        },
-        {
-            "id": "5e1a8707-2967-438d-b296-6c1955844db5",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "ds_list_create()",
-            "varName": "objects_collided_with",
-            "varType": 4
-        },
-        {
-            "id": "39369450-7e69-402a-98d5-9543844030c7",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "ds_list_create()",
-            "varName": "same_collision_timers",
-            "varType": 4
-        },
-        {
-            "id": "ac746e63-8cf2-4a5e-8b70-32847036e10f",
-            "modelName": "GMObjectProperty",
-            "mvc": "1.0",
-            "listItems": null,
-            "multiselect": false,
-            "rangeEnabled": false,
-            "rangeMax": 10,
-            "rangeMin": 0,
-            "resourceFilter": 1023,
-            "value": "0.1",
-            "varName": "time_between_same_collision",
             "varType": 0
         },
         {

@@ -53,6 +53,16 @@
             "enumb": 0,
             "eventtype": 8,
             "m_owner": "ac0b6dfd-243f-4196-ba2a-60ad76df7372"
+        },
+        {
+            "id": "fa1d54e8-cc5c-41b0-817f-954a230eb5e6",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 1,
+            "m_owner": "ac0b6dfd-243f-4196-ba2a-60ad76df7372"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -64,6 +74,14 @@
             "objectId": "a14974b9-b32e-4932-b44b-4bb950405038",
             "propertyId": "45481175-9308-4495-92b2-ec19b4f565c3",
             "value": "0.2"
+        },
+        {
+            "id": "e1e16be4-e43e-48b8-bb16-fc04c95349c6",
+            "modelName": "GMOverriddenProperty",
+            "mvc": "1.0",
+            "objectId": "a14974b9-b32e-4932-b44b-4bb950405038",
+            "propertyId": "e7095dbc-a40a-4e36-bed9-22e7e04db0cf",
+            "value": "HitboxControllerType.ORB"
         }
     ],
     "parentObjectId": "a14974b9-b32e-4932-b44b-4bb950405038",
@@ -92,7 +110,7 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "noone",
-            "varName": "controller",
+            "varName": "orb_controller",
             "varType": 4
         },
         {

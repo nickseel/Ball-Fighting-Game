@@ -1,5 +1,6 @@
 /// @desc Collide
 
+/*
 if(other.orb_movement_state == OrbMovementState.LAUNCHING) {
 	#region Launching
 	if(other.controller != noone && other.controller != self) {
@@ -39,18 +40,7 @@ if(other.orb_movement_state == OrbMovementState.LAUNCHING) {
 			if(health_pct <= 0) {
 				event_user(0); //Kill
 			}
-			
-			/*
-			var angle = arctan2(other.y - y, other.x - x);
-			var orb_vel = sqrt(sqr(other.x_vel) + sqr(other.y_vel));
-			other.orb_movement_state = OrbMovementState.FREE;
-			//other.x_vel *= -1;
-			other.x_vel = other.bounce * orb_vel * cos(angle);
-			other.y_vel = other.bounce * orb_vel * sin(angle);
-			x_vel -= other.x_vel;
-			y_vel -= other.y_vel;
-			*/
 		}
 	}
 	#endregion
-}
+}*/

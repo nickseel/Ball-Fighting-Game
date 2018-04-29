@@ -19,3 +19,32 @@ enum Abilities {
 	SAW,
 	DASH
 }
+
+
+
+enum HitboxType {
+	SQUARE,
+	CIRCLE
+}
+
+enum HitboxControllerType {
+	CONTROLLER,
+	ORB
+}
+
+
+
+enum MovementState {
+	FREE,
+	STUNNED
+}
+
+
+
+enum OrbMovementState {
+	FREE,
+	ORBITING,
+	LAUNCHING,
+	RETURNING,
+	TELEPORTING
+}

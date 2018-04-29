@@ -1,5 +1,5 @@
 /// @desc Collide
-
+/*
 if(other.controller != noone && other.controller != self) {
 	other.alive = false;
 	
@@ -9,3 +9,4 @@ if(other.controller != noone && other.controller != self) {
 		event_user(0); //Kill
 	}
 }
+*/
