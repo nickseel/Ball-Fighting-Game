@@ -15,8 +15,9 @@ for(var i = 0; i < num_abilities; i++) {
 		#region Launch orb
 		case Abilities.LAUNCH_ORB:
 		{
-			if(ability_inputs[i] && !prev_ability_inputs[i])
-				LaunchOrb(self, mouse_x, mouse_y);
+			if(ability_inputs[i] && !prev_ability_inputs[i]) {
+				LaunchOrb(self, cursor_position_x, cursor_position_y);
+			}
 		}
 		break;
 		#endregion
@@ -30,7 +31,7 @@ for(var i = 0; i < num_abilities; i++) {
 				for(var j = 0; j < ds_list_size(orbs); j++) {
 					var orb = ds_list_find_value(orbs, j);
 					
-					var d = sqrt(sqr(orb.x - mouse_x) + sqr(orb.y - mouse_y));
+					var d = sqrt(sqr(orb.x - cursor_position_x) + sqr(orb.y - cursor_position_y));
 					if(d < distance && (orb.orb_movement_state == OrbMovementState.FREE ||
 							orb.orb_movement_state == OrbMovementState.LAUNCHING)) {
 						distance = d;
@@ -81,7 +82,7 @@ for(var i = 0; i < num_abilities; i++) {
 		case Abilities.TELEPORT_ORB:
 		{
 			if(ability_inputs[i] && !prev_ability_inputs[i])
-				TeleportOrb(self, mouse_x, mouse_y);
+				TeleportOrb(self, cursor_position_x, cursor_position_y);
 		}
 		break;
 		#endregion
@@ -140,6 +141,7 @@ for(var i = 0; i < num_abilities; i++) {
 	prev_ability_inputs[i] = ability_inputs[i];
 }
 #endregion
+
 
 //Rotate orbs
 orb_rotation_speed = (orb_rotation_speed_max / ((num_orbs_orbiting * 0.8) + 2.5)) * (saw_timer * 5 + 1);

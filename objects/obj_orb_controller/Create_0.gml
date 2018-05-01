@@ -31,6 +31,7 @@ hitbox = instance_create_layer(x, y, "Instances", obj_sqr_hitbox);
 hitbox.hitbox_controller = self;
 hitbox.x_size = width*1;
 hitbox.y_size = height*1;
+hitbox.weight = 1;
 #endregion
 
 // Inherit the parent event

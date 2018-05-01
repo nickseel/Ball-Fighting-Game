@@ -345,6 +345,34 @@
             "value": "0",
             "varName": "num_abilities",
             "varType": 1
+        },
+        {
+            "id": "7b5e8d7d-c51e-4c67-ad0e-f5c1de059be6",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "cursor_position_x",
+            "varType": 0
+        },
+        {
+            "id": "1e10e7be-e068-4f3e-ac48-95ec911c5b3c",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "0",
+            "varName": "cursor_position_y",
+            "varType": 0
         }
     ],
     "solid": false,

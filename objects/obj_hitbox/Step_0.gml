@@ -3,9 +3,14 @@
 x = hitbox_controller.x;
 y = hitbox_controller.y;
 
-image_xscale = x_size / 64;
-image_yscale = y_size / 64;
-
+if(spawn_time <= 0) {
+	image_xscale = x_size / 64;
+	image_yscale = y_size / 64;
+} else {
+	spawn_time -= delta;
+	image_xscale = 0;
+	image_yscale = 0;
+}
 
 #region Tick entity collision timers
 for(var i = ds_list_size(objects_collided_with)-1; i >= 0; i--) {
@@ -22,3 +27,10 @@ for(var i = ds_list_size(objects_collided_with)-1; i >= 0; i--) {
 	}
 }
 #endregion
+
+if(lifetime != -999) {
+	lifetime -= delta;
+	if(lifetime <= 0) {
+		instance_destroy(self);
+	}
+}

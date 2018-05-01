@@ -11,11 +11,11 @@ if(player_controlled) {
 		if(keyboard_check_pressed(ability_input_keys[i]) ||
 				mouse_check_button_pressed(ability_input_keys[i] * -1)) {
 			
-			ability_inputs[i] = 1;
+			ability_inputs[i] = true;
 		} else if(keyboard_check_released(ability_input_keys[i]) ||
 				mouse_check_button_released(ability_input_keys[i] * -1)) {
 			
-			ability_inputs[i] = 0;
+			ability_inputs[i] = false;
 		}
 	}
 	
@@ -27,6 +27,9 @@ if(player_controlled) {
 		}
 		break;
 	}
+	
+	cursor_position_x = mouse_x;
+	cursor_position_y = mouse_y;
 }
 #endregion
 

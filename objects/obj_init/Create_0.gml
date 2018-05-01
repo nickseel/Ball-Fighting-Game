@@ -24,7 +24,8 @@ enum Abilities {
 
 enum HitboxType {
 	SQUARE,
-	CIRCLE
+	CIRCLE,
+	CIRC_TEMP
 }
 
 enum HitboxControllerType {

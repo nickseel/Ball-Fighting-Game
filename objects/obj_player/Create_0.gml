@@ -4,7 +4,7 @@ current_abilities =
 		[Abilities.CREATE_ORB,
 		Abilities.LAUNCH_ORB,
 		Abilities.SAW,
-		Abilities.TELEPORT_ORB,
+		Abilities.DAMAGE_AROUND_ORB,
 		Abilities.RETURN_ORB,
 		Abilities.DASH];
 

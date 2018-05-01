@@ -147,7 +147,7 @@
             "varType": 0
         },
         {
-            "id": "40dfcc22-a562-403e-abfc-edcc2014e02f",
+            "id": "216f6aae-e9de-4f24-a350-a3dd910e95ba",
             "modelName": "GMObjectProperty",
             "mvc": "1.0",
             "listItems": null,
@@ -157,6 +157,20 @@
             "rangeMin": 0,
             "resourceFilter": 1023,
             "value": "0",
+            "varName": "spawn_time",
+            "varType": 0
+        },
+        {
+            "id": "40dfcc22-a562-403e-abfc-edcc2014e02f",
+            "modelName": "GMObjectProperty",
+            "mvc": "1.0",
+            "listItems": null,
+            "multiselect": false,
+            "rangeEnabled": false,
+            "rangeMax": 10,
+            "rangeMin": 0,
+            "resourceFilter": 1023,
+            "value": "-999",
             "varName": "lifetime",
             "varType": 0
         },

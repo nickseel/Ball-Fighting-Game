@@ -5,6 +5,8 @@ switch(orb_movement_state) {
 	case OrbMovementState.FREE:
 	{
 		has_friction = true;
+		move_through_walls = false;
+		hitbox.damage = 0;
 		
 		event_inherited();
 	}
@@ -23,6 +25,8 @@ switch(orb_movement_state) {
 			7: start angle		*/
 		
 		has_friction = false;
+		move_through_walls = false;
+		hitbox.damage = 0.25;
 		
 		//Check mode
 		if(movement_data[0] != -1) {
@@ -74,6 +78,7 @@ switch(orb_movement_state) {
 	{
 		has_friction = false;
 		move_through_walls = true;
+		hitbox.damage = 0;
 		//show_debug_message("returning");
 		//Calculate direction and movement variables
 		var angle = arctan2(orb_controller.y - y, orb_controller.x - x) + 0;
@@ -99,8 +104,6 @@ switch(orb_movement_state) {
 			orb_controller.num_orbs++;
 			orb_controller.num_orbs_orbiting++;
 			ds_list_add(orb_controller.orbs, self);
-			
-			move_through_walls = false;
 		}
 		
 		//Run movement and collision code
@@ -124,18 +127,20 @@ switch(orb_movement_state) {
 			orb_movement_state = OrbMovementState.FREE;
 			is_visible = true;
 			
-			/*with(instance_create_layer(x, y, "Instances", obj_damage_field)) {
-				stick_to_object = other;
-				controller = other.controller;
-				life_time = 0.1;
-				spawn_time = 0.0;
-				size = 2.0;
-				damage = 0.25;
-			}*/
-		} else if(movement_data[0] >= movement_data[1] / 2 && movement_data[2] == 0) {
 			x = movement_data[3];
 			y = movement_data[4];
-			movement_data[2] = 1;
+			
+			with(instance_create_layer(x, y, "Instances", obj_circ_hitbox)) {
+				hitbox_controller = other;
+				hitbox_type = HitboxType.CIRC_TEMP;
+				lifetime = 0.1;
+				x_size = 64 * 2;
+				y_size = 64 * 2;
+				damage = 0.25;
+			}
+		} else if(movement_data[0] >= movement_data[1] / 2 && movement_data[2] == 0) {
+			
+			//movement_data[2] = 1;
 		}
 		
 		event_inherited();
