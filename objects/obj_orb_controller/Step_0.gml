@@ -15,7 +15,10 @@ for(var i = 0; i < num_abilities; i++) {
 		#region Launch orb
 		case Abilities.LAUNCH_ORB:
 		{
-			if(ability_inputs[i] && !prev_ability_inputs[i]) {
+			ability_timers[i, 0] += delta;
+			
+			if(ability_timers[i, 0] >= ability_timers[i, 1] && ability_inputs[i] && !prev_ability_inputs[i]) {
+				ability_timers[i, 0] = 0;
 				LaunchOrb(self, cursor_position_x, cursor_position_y);
 			}
 		}
@@ -24,7 +27,11 @@ for(var i = 0; i < num_abilities; i++) {
 		#region Return orb
 		case Abilities.RETURN_ORB:
 		{
-			if(ability_inputs[i] && !prev_ability_inputs[i]) {
+			ability_timers[i, 0] += delta;
+			
+			if(ability_timers[i, 0] >= ability_timers[i, 1] && ability_inputs[i] && !prev_ability_inputs[i]) {
+				ability_timers[i, 0] = 0;
+				
 				var distance = 200;
 				var nearest_orb = noone;
 				
@@ -48,7 +55,7 @@ for(var i = 0; i < num_abilities; i++) {
 		break;
 		#endregion
 		#region Shoot from orbs
-		case Abilities.SHOOT_FROM_ORB:
+		/*case Abilities.SHOOT_FROM_ORB:
 		{
 			ability_timers[i, 0] += delta;
 			
@@ -58,10 +65,10 @@ for(var i = 0; i < num_abilities; i++) {
 			if(ability_timers[i, 0] >= ability_timers[i, 1]) 
 				ability_timers[i, 0] -= ability_timers[i, 1];
 		}
-		break;
+		break;*/
 		#endregion
 		#region Laser from orbs
-		case Abilities.LASER_FROM_ORB:
+		/*case Abilities.LASER_FROM_ORB:
 		{
 			ability_timers[i, 0] += delta;
 			
@@ -76,7 +83,7 @@ for(var i = 0; i < num_abilities; i++) {
 			laser_target_x += cos(angle) * min(distance, 2.5);
 			laser_target_y += sin(angle) * min(distance, 2.5);
 		}
-		break;
+		break;*/
 		#endregion
 		#region Teleport orb
 		case Abilities.TELEPORT_ORB:
@@ -142,6 +149,20 @@ for(var i = 0; i < num_abilities; i++) {
 }
 #endregion
 
+#region Index orbiting orbs
+{
+	var index = 0;
+	for(var i = 0; i < ds_list_size(orbs); i++) {
+		
+		var orb = ds_list_find_value(orbs, i);
+		//show_debug_message(string(i) + ": " + string(orb.orb_movement_state));
+		if(orb.orb_movement_state == OrbMovementState.ORBITING) {
+			orb.orb_index = index;
+			index++;
+		}
+	}
+}
+#endregion
 
 //Rotate orbs
 orb_rotation_speed = (orb_rotation_speed_max / ((num_orbs_orbiting * 0.8) + 2.5)) * (saw_timer * 5 + 1);

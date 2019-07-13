@@ -8,6 +8,12 @@ switch(orb_movement_state) {
 		move_through_walls = false;
 		hitbox.damage = 0;
 		
+		var distance_to_controller = sqrt(sqr(orb_controller.x - x) + sqr(orb_controller.y - y));
+		if(distance_to_controller < orb_controller.orb_rotation_distance * 1.3) {
+			orb_movement_state = OrbMovementState.ORBITING;
+			orb_controller.num_orbs_orbiting++;
+		}
+		
 		event_inherited();
 	}
 	break;
@@ -26,7 +32,7 @@ switch(orb_movement_state) {
 		
 		has_friction = false;
 		move_through_walls = false;
-		hitbox.damage = 0.25;
+		//hitbox.damage = 0.25;
 		
 		//Check mode
 		if(movement_data[0] != -1) {
@@ -42,8 +48,8 @@ switch(orb_movement_state) {
 			var angle = arctan2(movement_data[6] - y, movement_data[5] - x);
 			
 			//Set velocity
-			x_vel = (prog_vel * movement_data[4] * cos(angle)) + (prog_curve * 200 * cos(orbiting_angle));
-			y_vel = (prog_vel * movement_data[4] * sin(angle)) + (prog_curve * 200 * sin(orbiting_angle));
+			x_vel = (prog_vel * movement_data[4] * cos(angle)) + (prog_curve * -100 * cos(orbiting_angle));
+			y_vel = (prog_vel * movement_data[4] * sin(angle)) + (prog_curve * -100 * sin(orbiting_angle));
 			
 			//Check if near the target position
 			var distance = sqrt(sqr(movement_data[5] - x) + sqr(movement_data[6] - y));
@@ -99,11 +105,14 @@ switch(orb_movement_state) {
 		if(distance < min(max_vel, vel) * (2 / 60)) {
 			//Return to orbit
 			orb_movement_state = OrbMovementState.ORBITING;
-			orb_index = orb_controller.num_orbs_orbiting;
+			//orb_index = orb_controller.num_orbs_orbiting;
 			
 			orb_controller.num_orbs++;
 			orb_controller.num_orbs_orbiting++;
-			ds_list_add(orb_controller.orbs, self);
+			
+			
+			ds_list_delete(orb_controller.orbs, ds_list_find_index(orb_controller.orbs, self));
+			ds_list_insert(orb_controller.orbs, irandom_range(0, ds_list_size(orb_controller.orbs)-1), self);
 		}
 		
 		//Run movement and collision code
@@ -137,6 +146,7 @@ switch(orb_movement_state) {
 				x_size = 64 * 2;
 				y_size = 64 * 2;
 				damage = 0.25;
+				knockback = 300;
 			}
 		} else if(movement_data[0] >= movement_data[1] / 2 && movement_data[2] == 0) {
 			

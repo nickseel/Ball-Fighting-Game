@@ -201,7 +201,7 @@ if(other != self) {
 							orb1.orb_movement_state != OrbMovementState.RETURNING && orb2.orb_movement_state != OrbMovementState.RETURNING) {
 						if(orb1.orb_controller == orb2.orb_controller) {
 							#region same controller
-							if(orb1.orb_movement_state == OrbMovementState.FREE || orb2.orb_movement_state == OrbMovementState.FREE) {
+							/*if(orb1.orb_movement_state == OrbMovementState.FREE || orb2.orb_movement_state == OrbMovementState.FREE) {
 								if(orb1.orb_movement_state == OrbMovementState.LAUNCHING) orb1.orb_movement_state = OrbMovementState.FREE;
 								if(orb2.orb_movement_state == OrbMovementState.LAUNCHING) orb2.orb_movement_state = OrbMovementState.FREE;
 						
@@ -233,7 +233,7 @@ if(other != self) {
 								ds_list_add(same_collision_timers, time_between_same_collision);
 							} else {
 							
-							}
+							}*/
 							#endregion
 						} else {
 							#region different controllers
@@ -268,6 +268,16 @@ if(other != self) {
 							ds_list_add(same_collision_timers, time_between_same_collision);
 							#endregion
 						}
+					} else {
+						/*if(orb1.orb_controller == orb2.orb_controller) {
+							if(orb1.orb_movement_state == OrbMovementState.FREE && orb2.orb_movement_state == OrbMovementState.ORBITING) {
+								orb1.orb_movement_state = OrbMovementState.ORBITING;
+								orb1.orb_controller.num_orbs_orbiting++;
+							} else if(orb2.orb_movement_state == OrbMovementState.FREE && orb1.orb_movement_state == OrbMovementState.ORBITING) {
+								orb2.orb_movement_state = OrbMovementState.ORBITING;
+								orb2.orb_controller.num_orbs_orbiting++;
+							}
+						}*/
 					}
 				}
 				break;
